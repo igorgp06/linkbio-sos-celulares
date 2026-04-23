@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+/* importações gerais */
+
+@import url('./global/global.css');
+
+/* janelas */
+@import url('./partials/window-1.css');
