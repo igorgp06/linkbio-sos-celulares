@@ -9,3 +9,6 @@
 
 /* janelas */
 @import url('./partials/window-1.css');
+
+/* informações */
+@import url('./partials/info.css');

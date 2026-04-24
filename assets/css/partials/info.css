@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+/* creditos e desenvolvimento */
+
+.in-development {
+    padding: 0.9rem;
+}
+
+.development-text {
+    width: 100%;
+    text-align: center;
+}
+
+.development-text span {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+}
+
+.development-text a {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-weight: 700;
+    color: var(--color-1);
+}
+
+.credits {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.credits-text {
+    padding: 0.35rem;
+}
+
+.dev-credits {
+    font-size: 0.7rem;
+    color: var(--text-main);
+}
+
+.credits a {
+    color: var(--color-5);
+}
+
+.in-development {
+    padding: 0.9rem;
+}
+
+.development-text {
+    width: 100%;
+    text-align: center;
+}
+
+.development-text span {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+
+}
+
+.development-text a {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-weight: 700;
+    color: var(--color-1);
+}
+.in-development {
+    padding: 0.9rem;
+}
+
+.development-text {
+    width: 100%;
+    text-align: center;
+}
+
+.development-text span {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+
+}
+
+.development-text a {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-weight: 700;
+    color: var(--color-1);
+}
