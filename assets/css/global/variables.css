@@ -5,10 +5,10 @@
 :root {
     /* cores */
     --color-1: #e22220;
-    --color-5: #6b0303;
     --color-2: #ffffff; /* palheta obtida através da logo e site */
-    --color-4: #f2f2f2;
     --color-3: #000000; /* TODO: verificar a palheta com cliente */
+    --color-4: #f2f2f2;
+    --color-5: #6b0303;
 
     --surface: #f6f9fc;
     --surface-strong: #ffffff;

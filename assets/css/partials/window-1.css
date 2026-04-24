@@ -2,3 +2,53 @@
 
 /* janela 1 */
 
+.window-1 {
+    padding: 0.95rem;
+}
+
+.main-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-1 img {
+    gap: 0.8rem;
+}
+
+.main-name span {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--color-1);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+}
+
+.main-name h1 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.1;
+}
+
+.main-name .subtitle {
+    margin-top: 0.4rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.logo-container-1 {
+    width: 100px;
+    min-width: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(0, 0, 0, 0.28);
+}
+
+.window-1 img {
+    width: 100%;
+    display: block;
+}

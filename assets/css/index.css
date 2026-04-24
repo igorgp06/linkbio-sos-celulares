@@ -4,5 +4,8 @@
 
 @import url('./global/global.css');
 
+/* estilos principais */
+@import url('./partials/main.css');
+
 /* janelas */
 @import url('./partials/window-1.css');
