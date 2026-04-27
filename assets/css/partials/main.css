@@ -45,12 +45,14 @@ p {
 
 .window-1,
 .window-2,
+.window-3,
 .in-development {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .window-1:hover,
 .window-2:hover,
+.window-3:hover,
 .in-development:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 24px rgba(16, 38, 62, 0.16);
