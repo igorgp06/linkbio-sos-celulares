@@ -66,17 +66,52 @@
 
             <section class="window-3 card">
                 <div class="window-3-content">
-
-                    <div class="">
-                        <h2>Nosso espaço</h2>  <!-- TODO: ajustar para deixar um botão collapsível -->
+                    <div class="gallery-header">
+                        <h2>Nosso espaço</h2>
+                        <button class="gallery-toggle-btn">Galeria</button>
                     </div>
 
-                    <div class="window-3-img"></div> <!-- TODO: redistribuir o espaço para mais fotos -->
+                    <div class="gallery-content">
+                        <div class="gallery-grid">
+                            <div class="gallery-item"
+                                data-description="Fachada da SOS Celulares - Assistência Técnica Especializada">
+                                <img src="./assets/static/images/fachada.webp" alt="Fachada da loja" loading="lazy">
+                            </div>
+                            <div class="gallery-item"
+                                data-description="Serviços de qualidade com profissionais especializados">
+                                <img src="./assets/static/images/fachada.webp" alt="Interior da loja - atendimento" loading="lazy">
+                            </div>
+                            <div class="gallery-item"
+                                data-description="Equipamentos modernos para diagnóstico e reparo">
+                                <img src="./assets/static/images/bancada.webp" alt="Área de serviço" loading="lazy">
+                            </div>
+                            <div class="gallery-item" data-description="Acessórios e aparelhos de qualidade disponíveis na loja">
+                                <img src="./assets/static/images/iphones.webp" alt="Acessórios" loading="lazy">
+                            </div>
+<!--                             <div class="gallery-item" data-description="Ambiente acolhedor e atencioso">
+                                <img src="./assets/static/images/fachada.webp" alt="Ambiente" loading="lazy">
+                            </div>
+                            <div class="gallery-item" data-description="Venha nos conhecer pessoalmente!">
+                                <img src="./assets/static/images/fachada.webp" alt="Convite para visita" loading="lazy">
+                            </div> -->
+                        </div>
+                    </div>
                 </div>
             </section>
 
+            <div class="gallery-modal">
+                <div class="modal-container">
+                    <button class="modal-close">✕</button>
+                    <div class="modal-image-container">
+                        <img class="modal-img" src="" alt="Imagem da galeria">
+                    </div>
+                    <p class="modal-description">Clique nas setas para navegar</p>
+                    <button class="modal-prev">❮</button>
+                    <button class="modal-next">❯</button>
+                </div>
+            </div>
 
-<!--             <section class="window-4 card">
+            <!--             <section class="window-4 card">
                 <h2>Onde estamos</h2>
                 <p>📍 Rua XXXXXXXX, 123 - Centro, Garopaba/SC</p>
                 <p>🕒 Seg a Sáb • 08:00 às 18:00</p>
@@ -119,7 +154,7 @@
         </div>
     </main>
 
-
+    <script src="./assets/js/window-3.js"></script>
 
 </body>
 
