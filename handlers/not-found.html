@@ -5,12 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 Não Encontrado - LinkBio SOS Celulares</title>
+    <link rel="shortcut icon" href="../assets/static/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            background: var(--color-5);
+            color: var(--color-4);
+            font-family: 'Inter', Arial, sans-serif;
+            padding: 1rem;
+        }
+
+        .not-found {
+            width: min(680px, 100%);
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        .not-found h1 {
+            margin: 0;
+            font-size: clamp(2rem, 7vw, 3rem);
+            color: var(--color-2);
+        }
+
+        .not-found p {
+            margin: 1rem 0 0;
+            line-height: 1.6;
+        }
+
+        .not-found a {
+            display: inline-block;
+            margin-top: 1.25rem;
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--color-4);
+            background: linear-gradient(-45deg, #000000, #360d0d, #ff0000);
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 
 <body>
+    <main class="not-found" aria-labelledby="not-found-title">
+        <h1 id="not-found-title">404</h1>
+        <p>A página que você tentou acessar não foi encontrada.</p>
+        <p>Você será redirecionado para a página inicial em alguns segundos.</p>
+        <a href="../index.html">Voltar agora</a>
+    </main>
 
-    <!-- TODO: implementar página de 404 e sua respectiva lógica -->
-
+    <script>
+        setTimeout(function () {
+            window.location.href = '../index.html';
+        }, 5000);
+    </script>
 </body>
 
 </html>

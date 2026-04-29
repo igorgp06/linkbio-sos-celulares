@@ -26,9 +26,36 @@
     font-size: 1.5rem;
 }
 
+.window-4-icon i {
+    animation: rocketFloat 3.2s ease-in-out infinite;
+    will-change: transform;
+}
+
 .window-4-text {
     margin-left: 0.95rem;
     display: flex;
     align-items: center;
     color: var(--color-4);
+}
+
+@keyframes rocketFloat {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(2px) translateY(-1px) rotate(-7deg);
+    }
+
+    50% {
+        transform: translateX(2px) translateY(-2px) rotate(5deg);
+    }
+
+    75% {
+        transform: translateX(-1px) translateY(1px) rotate(-4deg);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0px) rotate(0deg);
+    }
 }
