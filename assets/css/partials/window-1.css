@@ -34,12 +34,6 @@
     line-height: 1.1;
 }
 
-.main-name .subtitle {
-    margin-top: 0.4rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
 .logo-container-1 {
     width: 100px;
     min-width: 100px;

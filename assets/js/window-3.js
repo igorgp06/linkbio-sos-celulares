@@ -8,7 +8,8 @@ if (galleryToggle) {
     });
 }
 
-const galleryImages = document.querySelectorAll('.gallery-item img');
+const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+const galleryImages = galleryItems.map((item) => item.querySelector('img'));
 const modal = document.querySelector('.gallery-modal');
 const modalImg = document.querySelector('.modal-img');
 const modalDescription = document.querySelector('.modal-description');
@@ -18,19 +19,48 @@ const nextBtn = document.querySelector('.modal-next');
 
 let currentImageIndex = 0;
 
+const imageMeta = galleryItems.map((item, index) => ({
+    src: galleryImages[index]?.src || '',
+    alt: galleryImages[index]?.alt || 'Imagem da galeria',
+    description: item.dataset.description || 'Clique nas setas para navegar'
+}));
+const imageCache = new Map();
+let isSwitchingImage = false;
+
+function preloadImage(src) {
+    if (!src || imageCache.has(src)) return;
+    const img = new Image();
+    img.decoding = 'async';
+    img.loading = 'eager';
+    img.src = src;
+    imageCache.set(src, img);
+}
+
+function renderModalImage(index) {
+    const image = imageMeta[index];
+    if (!image || isSwitchingImage) return;
+
+    isSwitchingImage = true;
+    modalImg.src = image.src;
+    modalImg.alt = image.alt;
+    modalDescription.textContent = image.description;
+
+    const nextIndex = (index + 1) % imageMeta.length;
+    const prevIndex = (index - 1 + imageMeta.length) % imageMeta.length;
+    preloadImage(imageMeta[nextIndex]?.src);
+    preloadImage(imageMeta[prevIndex]?.src);
+
+    requestAnimationFrame(() => {
+        isSwitchingImage = false;
+    });
+}
+
+
 function openModal(index) {
     currentImageIndex = index;
-    const imageElement = galleryImages[index];
-    const alt = imageElement.alt;
-    const src = imageElement.src;
-    const body = document.body;
-    const description = imageElement.closest('.gallery-item').dataset.description || 'Clique nas setas para navegar';
-
-    modalImg.src = src;
-    modalImg.alt = alt;
-    modalDescription.textContent = description;
+    renderModalImage(index);
     modal.classList.add('active');
-    body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
 }
 
 function closeModalHandler() {
@@ -40,31 +70,27 @@ function closeModalHandler() {
 
 function nextImage() {
     currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-    const imageElement = galleryImages[currentImageIndex];
-    const alt = imageElement.alt;
-    const src = imageElement.src;
-    const description = imageElement.closest('.gallery-item').dataset.description || 'Clique nas setas para navegar';
-
-    modalImg.src = src;
-    modalImg.alt = alt;
-    modalDescription.textContent = description;
+    renderModalImage(currentImageIndex);
 }
 
 function prevImage() {
     currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-    const imageElement = galleryImages[currentImageIndex];
-    const alt = imageElement.alt;
-    const src = imageElement.src;
-    const description = imageElement.closest('.gallery-item').dataset.description || 'Clique nas setas para navegar';
-
-    modalImg.src = src;
-    modalImg.alt = alt;
+    renderModalImage(currentImageIndex);
     modalDescription.textContent = description;
 }
 
 galleryImages.forEach((img, index) => {
+    if (!img) return;
     img.addEventListener('click', () => openModal(index));
 });
+
+if (galleryToggle) {
+    galleryToggle.addEventListener('click', () => {
+        if (!galleryContent.classList.contains('expanded')) {
+            imageMeta.forEach((image) => preloadImage(image.src));
+        }
+    });
+}
 
 if (closeModal) {
     closeModal.addEventListener('click', closeModalHandler);
@@ -87,6 +113,7 @@ if (modal) {
 }
 
 document.addEventListener('keydown', (e) => {
+    if (!modal) return;
     if (!modal.classList.contains('active')) return;
 
     if (e.key === 'ArrowRight') nextImage();

@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/* janela 6 */
+
+.window-6 {
+    padding: 0.95rem;
+}
+
+.main-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+.window-6-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--surface-strong);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    box-shadow: 0 4px 8px var(--shadow-card);
+}
+
+.services-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    justify-content: center;
+    display: flex;
+}
+
+.services-list {
+    display: flex;
+    gap: 0.1rem;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    text-align: center;
+}

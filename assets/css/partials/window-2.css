@@ -3,37 +3,19 @@
 /* janela 2 */
 
 .window-2 {
-    padding: 0.95rem;
+    padding: 0.5rem;
 }
 
-.main-info {
+.window-2-content {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    align-items: center;
-}
-
-.window-2-card {
-    width: 100%;
-    max-width: 400px;
-    background-color: var(--surface-strong);
-    border-radius: var(--radius-lg);
-    padding: 1rem;
-    box-shadow: 0 4px 8px var(--shadow-card);
-}
-
-.services-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-main);
     justify-content: center;
-    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.services-list {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
+.window-2-subtitle {
+    color: var(--text-main);
+    font-weight: 550;
+    font-size: 1rem;
 }
-
