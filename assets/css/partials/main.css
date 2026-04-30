@@ -2,6 +2,10 @@
 
 /* main */
 
+html {
+    background: linear-gradient(180deg, rgba(221, 229, 236, 0.92), rgba(221, 229, 236, 0.98)), var(--color-3); /* TODO: testar */
+}
+
 body {
     margin: 0;
     display: flex;

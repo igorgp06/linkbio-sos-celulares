@@ -24,6 +24,7 @@ const imageMeta = galleryItems.map((item, index) => ({
     alt: galleryImages[index]?.alt || 'Imagem da galeria',
     description: item.dataset.description || 'Clique nas setas para navegar'
 }));
+
 const imageCache = new Map();
 let isSwitchingImage = false;
 
@@ -55,17 +56,18 @@ function renderModalImage(index) {
     });
 }
 
-
 function openModal(index) {
     currentImageIndex = index;
     renderModalImage(index);
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflowX = 'hidden';
+    document.body.style.overflowY = 'hidden';
 }
 
 function closeModalHandler() {
     modal.classList.remove('active');
-    document.body.style.overflow = '';
+    document.body.style.overflowX = '';
+    document.body.style.overflowY = '';
 }
 
 function nextImage() {
