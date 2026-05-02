@@ -1,0 +1,2 @@
+User-agent: *
+https://linkbio-sos-celulares.vercel.app/sitemap.xml
