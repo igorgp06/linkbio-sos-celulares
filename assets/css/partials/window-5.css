@@ -17,7 +17,7 @@
 .window-5-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(140deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90));
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.950), rgba(255, 255, 255, 0.950));
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 50%;
     display: flex;
@@ -45,7 +45,7 @@
     }
 
     25% {
-        transform: translateX(2px) translateY(-1px) rotate(-7deg);
+        transform: translateX(-2px) translateY(-1px) rotate(-7deg);
     }
 
     50% {
