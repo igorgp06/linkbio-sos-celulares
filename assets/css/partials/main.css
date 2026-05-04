@@ -20,17 +20,6 @@ body {
     color: var(--text-main);
 }
 
-/*    
- 
-guardar estilo 
-
- background:
-        radial-gradient(circle at 12% 18%, rgba(255, 71, 71, 0.18), transparent 30%),
-        radial-gradient(circle at 85% 10%, rgba(255, 128, 128, 0.1), transparent 44%),
-        linear-gradient(165deg, rgba(0, 0, 0, 0.96) 0%, rgba(23, 1, 1, 0.95) 38%, rgba(78, 4, 4, 0.94) 100%);
-        
-        */
-
 .main {
     width: min(100%, 460px);
 }
@@ -77,7 +66,7 @@ p {
     color: var(--color-main);
 }
 
-/* animations */
+/* animações */
 
 .window-1,
 .window-2,
@@ -85,8 +74,10 @@ p {
 .window-4,
 .window-5,
 .window-6,
+.window-7,
+.window-8,
 .in-development {
-    transition: all 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .window-1:hover,
@@ -95,6 +86,8 @@ p {
 .window-4:hover,
 .window-5:hover,
 .window-6:hover,
+.window-7:hover,
+.window-8:hover,
 .in-development:hover {
     transform: translateY(-3px);
     border-color: rgba(255, 127, 127, 0.55);
