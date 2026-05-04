@@ -14,13 +14,6 @@
 .development-text a {
     display: inline-block;
     margin-top: 0.35rem;
-    font-weight: 600;
-    color: var(--color-1);
-}
-
-.development-text a {
-    display: inline-block;
-    margin-top: 0.35rem;
     font-weight: 650;
     color: var(--color-1);
 }
@@ -28,7 +21,6 @@
 .footer {
     width: 100%;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
