@@ -12,7 +12,7 @@ O projeto segue o seguinte padrão de sufixos:
 | [ADD]     | Adição de algo novo para o projeto, sem remoções consideráveis.            |
 | [RE-WORK] | Alteração considerável no projeto, com muitas remoções e alterações.       |
 | [DEL]     | Remoção de pastas, linhas de código, imagens, etc.                         |
-| [UPDATE]  | Melhorias de performance, refatorações, etc.                               |
+| [UPDATE]  | Melhorias de performance, refatorações, pequenos ajustes e correções.      |
 | [PATCH]   | Correção de algo que funcionava, mas de forma inadequada.                  |
 | [INFO]    | Alterações de informações, como README ou conteúdo textual do site.        |
 | [FIX]     | Correção de falhas.                                                        |
