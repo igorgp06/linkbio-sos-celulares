@@ -20,9 +20,12 @@ const nextBtn = document.querySelector('.modal-next');
 let currentImageIndex = 0;
 
 const imageMeta = galleryItems.map((item, index) => ({
-    src: galleryImages[index]?.src || '',
+    thumb: galleryImages[index]?.src || '',
+    full: item.dataset.full || galleryImages[index]?.src || '',
     alt: galleryImages[index]?.alt || 'Imagem da galeria',
-    description: item.dataset.description || 'Clique nas setas para navegar'
+    description:
+        item.dataset.description ||
+        'Clique nas setas para navegar'
 }));
 
 const imageCache = new Map();
@@ -39,21 +42,19 @@ function preloadImage(src) {
 
 function renderModalImage(index) {
     const image = imageMeta[index];
-    if (!image || isSwitchingImage) return;
 
-    isSwitchingImage = true;
-    modalImg.src = image.src;
+    if (!image) return;
+
+    modalImg.src = image.full;
     modalImg.alt = image.alt;
     modalDescription.textContent = image.description;
 
     const nextIndex = (index + 1) % imageMeta.length;
-    const prevIndex = (index - 1 + imageMeta.length) % imageMeta.length;
-    preloadImage(imageMeta[nextIndex]?.src);
-    preloadImage(imageMeta[prevIndex]?.src);
+    const prevIndex =
+        (index - 1 + imageMeta.length) % imageMeta.length;
 
-    requestAnimationFrame(() => {
-        isSwitchingImage = false;
-    });
+    preloadImage(imageMeta[nextIndex]?.full);
+    preloadImage(imageMeta[prevIndex]?.full);
 }
 
 function openModal(index) {
@@ -76,9 +77,11 @@ function nextImage() {
 }
 
 function prevImage() {
-    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    currentImageIndex =
+        (currentImageIndex - 1 + galleryImages.length)
+        % galleryImages.length;
+
     renderModalImage(currentImageIndex);
-    modalDescription.textContent = description;
 }
 
 galleryImages.forEach((img, index) => {
